@@ -4,7 +4,7 @@
 Sistema integral para la gestión de un hotel que consta de dos subsistemas principales:
 
 - **Sitio Público:**  
-  Página moderna y atractiva para que los clientes conozcan el hotel, sus servicios, promociones y facilidades, con la capacidad de realizar reservaciones en línea con retroalimentación inmediata.
+  Página moderna y atractiva para que los clientes conozcan el hotel, sus servicios, promociones y facilidades, con la capacidad de realizar reservaciones.
 
 - **Módulo Administrativo:**  
   Panel seguro para que los administradores gestionen el contenido del sitio público (textos, imágenes), administren habitaciones, tarifas, temporadas, disponibilidad, y controlen el acceso mediante login/logout.
