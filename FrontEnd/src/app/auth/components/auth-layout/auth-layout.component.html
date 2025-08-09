@@ -1,0 +1,21 @@
+<div class="flex h-screen bg-gray-50">
+  <!-- Side Menu - Fixed -->
+  <aside class="w-64 fixed inset-y-0 left-0">
+    <div class="bg-white shadow-md rounded-r-xl h-full">
+      <nav class="flex flex-col h-full">
+        <!-- Logo Section -->
+        <div class="p-4 border-b border-gray-100">
+          <img src="assets/logoHotel.svg" alt="Hotel Logo" class="h-24 w-auto mx-auto">
+        </div>
+        
+        <!-- Menu Items -->
+        <app-side-menu-auth />
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 pl-64">
+    <router-outlet />
+  </main>
+</div>

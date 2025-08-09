@@ -1,0 +1,127 @@
+<div class="max-w-7xl mx-auto p-4 space-y-6">
+  <!-- Search Form -->
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">Disponibilidad de habitaciones</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-medium text-gray-600">Fecha de entrada</label>
+        <input 
+          type="date" 
+          [(ngModel)]="checkInDate"
+          [min]="minDate"
+          (change)="onCheckInDateChange()"
+          class="border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" 
+        />
+      </div>
+
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-medium text-gray-600">Fecha de salida</label>
+        <input 
+          type="date" 
+          [(ngModel)]="checkOutDate"
+          [min]="minDateDeparture"
+          class="border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors" 
+        />
+        <span class="mt-1 text-xs text-gray-500">Estancia máxima: {{ MAX_STAY_DAYS }} días</span>
+      </div>
+
+      <div class="flex flex-col">
+        <label class="mb-2 text-sm font-medium text-gray-600">Tipo de habitación</label>
+        <select 
+          [(ngModel)]="roomType"
+          class="border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors appearance-none bg-white"
+        >
+          <option [value]="0">Todas</option>
+          <option [value]="1">Normal</option>
+          <option [value]="2">Premium</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    @if (error) {
+      <div class="mt-4 text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-200">
+        {{ error }}
+      </div>
+    }
+
+    <!-- Search Button -->
+    <div class="mt-6">
+      <button 
+        (click)="onSearch()"
+        type="button" 
+        class="px-4 py-2.5 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors shadow-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+        [disabled]="loading"
+      >
+        @if (loading) {
+          <span>Buscando...</span>
+        } @else {
+          <span>Buscar</span>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Results Table -->
+  @if (rooms.length > 0) {
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="px-6 py-4 border-b border-gray-200">
+        <h3 class="text-lg font-medium text-gray-800">
+          Habitaciones Disponibles ({{ rooms.length }} encontradas)
+        </h3>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="py-3.5 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Número de Habitación
+              </th>
+              <th class="py-3.5 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Tipo
+              </th>
+              <th class="py-3.5 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Precio por Noche
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            @for(room of rooms; track room.roomNumber) {
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-4 px-6 text-sm text-gray-900">
+                  {{ room.roomNumber }}
+                </td>
+                <td class="py-4 px-6 text-sm">
+                  <span class="inline-flex px-2 py-1 text-xs font-medium rounded-full"
+                        [class]="room.roomType === 'Premium' ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800'">
+                    {{ room.roomType }}
+                  </span>
+                </td>
+                <td class="py-4 px-6 text-sm font-medium text-gray-900">
+                  {{ '$'+room.price }}
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  }
+
+  <!-- No Results Message -->
+  @if (hasSearched && rooms.length === 0 && !loading && !error) {
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <div class="text-center space-y-2">
+        <p class="text-gray-600">No se encontraron habitaciones disponibles para las fechas seleccionadas.</p>
+        <p class="text-sm text-gray-500">Sugerencias:</p>
+        <ul class="text-sm text-gray-500 list-disc list-inside">
+          <li>Intenta con diferentes fechas</li>
+          <li>Reduce la duración de la estancia</li>
+          <li>Prueba con un tipo de habitación diferente</li>
+        </ul>
+      </div>
+    </div>
+  }
+</div>

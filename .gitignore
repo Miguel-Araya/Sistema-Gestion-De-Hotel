@@ -23,9 +23,6 @@ obj/
 # Logs
 *.log
 
-# Entity Framework Migrations
-[Mm]igrations/
-
 # NuGet packages
 *.nupkg
 *.snupkg

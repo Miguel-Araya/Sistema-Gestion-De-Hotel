@@ -1,0 +1,51 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+.vs
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+src/app/core/services/roomType.service.ts
+src/app/core/services/roomType.service.ts
+src/app/core/services/room.service.ts
+src/app/core/services/room-rate.service.ts
+src/app/core/services/promotion.service.ts
+src/app/core/services/content.service.ts
+src/app/core/services/booking.service.ts
+src/app/core/services/ad.service.ts
+src/app/core/constants/api.constants.ts

@@ -1,0 +1,13 @@
+<section class="flex-1 overflow-y-auto py-2">
+  @for (option of menuOptions; track option.route) {
+    <a 
+      (click)="navigateTo(option.route)" 
+      [routerLink]="option.route"
+      [routerLinkActiveOptions]="{ exact: true }" 
+      routerLinkActive="active-menu-item" 
+      class="menu-link flex items-center px-4 py-3 text-gray-600 hover:bg-[#4d7755]/5 transition-all duration-200"
+    >
+      <span class="menu-text">{{option.label}}</span>
+    </a>
+  }
+</section>

@@ -1,0 +1,15 @@
+<!-- Facility Card -->
+<div class="bg-white rounded-xl p-4 shadow-sm mb-4 hover:shadow-lg transition-all">
+  <div class="flex flex-col md:flex-row gap-4">
+    <img 
+      [src]="image()" 
+      alt="Facility Image" 
+      class="w-full md:w-[400px] h-[300px] object-cover rounded-lg"
+    />
+    <div class="flex items-center">
+      <p class="text-lg text-gray-700 leading-relaxed">
+        {{ content() }}
+      </p>
+    </div>
+  </div>
+</div>

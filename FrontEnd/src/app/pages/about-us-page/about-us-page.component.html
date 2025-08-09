@@ -1,0 +1,6 @@
+<div class="bg-white">
+  @if (errorMessage()) {
+    <h1>{{errorMessage()}}</h1>
+  }
+  <app-about-us [dataPage]="dataPage()"></app-about-us>
+</div>
