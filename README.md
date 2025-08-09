@@ -4,10 +4,10 @@
 Sistema integral para la gestión de un hotel que consta de dos subsistemas principales:
 
 - **Sitio Público:**  
-  Página moderna y atractiva para que los clientes conozcan el hotel, sus servicios, promociones y facilidades, con la capacidad de realizar reservaciones.
+  Página para que los clientes conozcan el hotel, sus servicios, promociones y facilidades, con la capacidad de realizar reservaciones.
 
 - **Módulo Administrativo:**  
-  Panel seguro para que los administradores gestionen el contenido del sitio público (textos, imágenes), administren habitaciones, tarifas, temporadas, disponibilidad, y controlen el acceso mediante login/logout.
+  Panel para que los administradores gestionen el contenido del sitio público (textos, imágenes), administren habitaciones, tarifas, temporadas, disponibilidad, y controlen el acceso mediante login/logout.
 
 ---
 
@@ -34,7 +34,7 @@ Sistema integral para la gestión de un hotel que consta de dos subsistemas prin
 ## Tecnologías
 
 - Backend: .NET Core 8  
-- Frontend: Angular  
+- Frontend: Angular y Tailwind CSS  
 - Base de datos: SQL Server con Entity Framework para migraciones y consultas vía Dapper.  
 - Autenticación: JWT con Identity  
 - Otros: Google Maps API para ubicación
