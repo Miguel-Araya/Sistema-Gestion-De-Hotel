@@ -1,4 +1,4 @@
-````markdown
+
 # Sistema de Gestión Hotelera
 
 Sistema integral para la gestión de un hotel que consta de dos subsistemas principales:
